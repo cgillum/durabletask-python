@@ -203,4 +203,4 @@ class TaskHubGrpcClient:
     def purge_orchestration(self, instance_id: str, recursive: bool = True):
         req = pb.PurgeInstancesRequest(instanceId=instance_id, recursive=recursive)
         self._logger.info(f"Purging instance '{instance_id}'.")
-        self._stub.PurgeInstances()
+        self._stub.PurgeInstances(req)
